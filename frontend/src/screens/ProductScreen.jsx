@@ -1,4 +1,4 @@
-import { UseEffect, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { Row, Col, Image, ListGroup, Button, ListGroupItem } from 'react-bootstrap';
