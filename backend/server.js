@@ -11,6 +11,9 @@ connectDB(); // Connect to MongoDB
 
 const app = express();
 
+app.use(express.json()); // Allow us to accept JSON data in the body
+app.use(express.urlencoded({ extended: true }));
+
 app.get('/', (req, res) => {
   res.send('Server is ready');
 });
