@@ -1,5 +1,6 @@
 import express from 'express';
 import dotenv from 'dotenv';
+import cookieParser from 'cookie-parser';
 dotenv.config();
 import connectDB from './config/db.js';
 import productRoutes from './routes/productRoutes.js';
@@ -11,8 +12,12 @@ connectDB(); // Connect to MongoDB
 
 const app = express();
 
+// Body parser middleware
 app.use(express.json()); // Allow us to accept JSON data in the body
 app.use(express.urlencoded({ extended: true }));
+
+// Cookie parser middleware
+app.use(cookieParser());
 
 app.get('/', (req, res) => {
   res.send('Server is ready');
